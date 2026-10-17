@@ -8,6 +8,7 @@ import { useLanguage } from "@/lib/i18n/LanguageProvider";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { WhatsAppButton } from "@/components/whatsapp/WhatsAppButton";
 import { siteConfig } from "@/content/site-config";
+import { createPortal } from "react-dom";
 
 export function Navbar() {
   const { t } = useLanguage();
