@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Al-A'lawn",
-  tagline: "Metaphysical World",
+  tagline: "Islamic Spiritual Guidance",
   taglineUrdu: "دنیائے ماوراء الطبیعت",
   description:
-    "Spiritual guidance rooted in the Quran and Sunnah — Istikhara, Islamic numerology, Ruqyah, and support through life's difficult passages.",
+    "Explore Islamic spiritual guidance rooted in the Quran and Sunnah, including Istikhara, Ruqyah, and faith-based support through life's challenges. Learn about these practices with clear, respectful guidance.",
   email: "abualnoorqadri1112@gmail.com",
   phoneDisplay: "0301-4423433",
   phoneE164: "+923014423433",
