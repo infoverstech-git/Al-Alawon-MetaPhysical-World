@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X, Moon } from "lucide-react";
 import { clsx } from "clsx";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
@@ -12,6 +12,23 @@ import { siteConfig } from "@/content/site-config";
 export function Navbar() {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
+
+  // Close the mobile menu whenever the page scrolls.
+  useEffect(() => {
+    if (!open) return;
+
+    const handleScroll = () => {
+      setOpen(false);
+    };
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [open]);
 
   const navItems = [
     { href: "/", label: t("nav_home") },
@@ -78,13 +95,13 @@ export function Navbar() {
 
       <div
         id="mobile-navigation"
-        aria-hidden={!open}
         className={clsx(
           "border-t border-white/10 bg-[var(--color-void)] transition-[max-height,opacity] duration-300 lg:hidden",
           open
             ? "visible max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain opacity-100"
             : "invisible max-h-0 overflow-hidden opacity-0"
         )}
+        aria-hidden={!open}
       >
         <ul className="flex flex-col gap-1 px-5 py-4">
           {navItems.map((item) => (
