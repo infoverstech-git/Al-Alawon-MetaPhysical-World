@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://al-alawn-metaphysical.example.com";
+const BASE_URL = "https://al-alawon-spiritual-world.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return ["", "/about", "/contact", "/disclaimer"].map((route) => ({
